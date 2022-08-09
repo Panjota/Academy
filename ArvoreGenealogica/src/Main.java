@@ -14,6 +14,5 @@ public class Main {
         juliezinha.verificarIgualade(juliezinha1);
         analu.verificarIgualade(juliezinha);
 
-        //Infelizmente não consegui fazer a ultima questão d).
     }
 }
