@@ -2,11 +2,11 @@
 
 public class Pessoa{
     public String nome;
-    public String pai;
-    public String mae;
+    public Pessoa pai;
+    public Pessoa mae;
 
     //a) Construtores Sobrecarregados
-    public Pessoa(String nome, String pai, String mae) {
+    public Pessoa(String nome, Pessoa pai, Pessoa mae) {
         this.nome = nome;
         this.pai = pai;
         this.mae = mae;
@@ -25,16 +25,16 @@ public class Pessoa{
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public String getPai() {
+    public Pessoa getPai() {
         return pai;
     }
-    public void setPai(String pai) {
+    public void setPai(Pessoa pai) {
         this.pai = pai;
     }
-    public String getMae() {
+    public Pessoa getMae() {
         return mae;
     }
-    public void setMae(String mae) {
+    public void setMae(Pessoa mae) {
         this.mae = mae;
     }
 
@@ -55,5 +55,30 @@ public class Pessoa{
 
         }
     }
+    
+    //d)Verificando se uma pessoa do parametro é antecessora de outra
+    public void verificarAntecessor(Pessoa pessoa){
+        if (pai == pessoa || mae == pessoa){
+            System.out.println(pessoa.getNome() + " é antecessor(a) de " + nome);
+        }else{
+            System.out.println(pessoa.getNome() + " não é antecessor de " + nome);
+        }
+    }
+
+    // segundo metodo opcional, ele verificar se a pessoa tem antecessores
+    // se ele tiver ele mostra quem são, se não, ele mostra que não tem.
+    public void verificandoAntecessores(){
+        if (pai == null && mae == null){
+            System.out.println(nome + " não tem antecessores!!");
+        }else{
+            System.out.println("Os antecessores de " + nome + " são: " + getPai() + " e " + getMae());
+        }
+    
+    }
+    @Override
+    public String toString() {
+        return  nome;
+    }
+    
     
 }
